@@ -26,10 +26,13 @@ p{
   background-color: white;
   width: 50%;
   margin: 0 auto 0 auto;
+  padding-top: 30px;
+  font-family: 'Suez One', serif;
 }
 .mid-container{
   background-color: #222831;
   color: white;
+  font-family: serif;
 }
 
 .aca_proj{
