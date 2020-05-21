@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+}
+hr{
+  border-style: none;
+  border-top-style: dotted;
+  border-color: black;
+  border-width: 5px;
+  width: 80%;
+}
+h1{
+  width:50%;
+    margin: 0 auto 0 auto;
+}
+ul{
+  font-weight: bold;
+}
+p{
+  font-weight: normal;
+}
+
+  img{
+    height: 350px;
+  }
+.top-container{
+  background-color: white;
+  width: 50%;
+  margin: 0 auto 0 auto;
+}
+.mid-container{
+  background-color: #222831;
+  color: white;
+}
+
+.aca_proj{
+  background-color: #222831;
+  color: white;
+}
+.navbar{
+  position:fixed;
+}
