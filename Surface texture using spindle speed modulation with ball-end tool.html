@@ -1,3 +1,130 @@
-<p>Motion Control using dSpace</p>
-<p>Texture simulation using Z-map</p>
-<p>Uncut chip thickness simulation using Alpha shape</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>☕Lennon Huang's Personal Site</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JavaScript for nav bar -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/b2fec3d3e5.js" crossorigin="anonymous"></script>
+  <!-- customize style -->
+  <link rel="stylesheet" href="css/surfaceTextureProject.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <a class="navbar-brand" href="index.html">☕</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="index.html#aca_container">Projects</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="blog.html">Blog</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#footer">Contact</a> </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id = "content" class="container-fluid">
+      <div class="project_intro">
+        <h1>Surface texture using Ball-end Tool</h1>
+      </div>
+      <div class="whatIsit">
+        <h2>What is it?</h2>
+        <p>It is a texture method using micro-milling. Unlike conventional milling in which you may probably end up with simple grooves,
+        the trochoidal movement of cutting edge is controlled by reference signals to create texture.
+        To be specific, the spindle speed reference is modulated by giving harmonics signals to dSpace control box with MATLAB/Simulink.
+      </p>
+      </div>
+      <div class="Strategy ">
+        <h2>Strategy</h2>
+        <p>The overall strategy is shown in the figure below. Errors (run-out and deflections) are considered in the
+        cutting edges trajectories.</p>
+        <div class="" style="text-align:center">
+          <img src="images/textureStrategy.png" style="width: 50%" alt="">
+        </div>
+        <p>Before doing any machining, I have written some codes to simulate the surface finish using Z-map method.
+          The flow chart of the program in shown in the figure below.
+        </p>
+        <div class="" style="text-align:center">
+            <img src="images/textureSimulation.png" style="width: 50%" alt="">
+          </div>
+        <p>The cutting force is simulated by converting cutting history points into a concave hull so that we can know the materials left (uncut chip thickness to be specific) on the workpiece for each time interval as shown in the figure below.</p>
+        <div class="" style="text-align:center">
+          <img src="images/ConcaveHull.jpg" style="width: 30%" alt="">
+        </div>
+      </div>
+      <div class="Result">
+        <h2>Results</h2>
+        <p>Here are two 3D views of one example:</p>
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface.png" alt="">
+          </div>
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface_2.png" alt="">
+          </div>
+        </div>
+        <p>Here are examples of "Simulation vs Experiment":</p>
+        <div class="row">
+          <div class="col-sm-6 col-lg-6">
+            <h3 style="text-align:center">Simulation</h3>
+          </div>
+          <div class="col-sm-6 col-lg-6 ">
+            <h3 style="text-align:center">Experiment</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface_3.png" alt="">
+          </div>
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface_real.png" style="width:50%;margin-top:5%" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface_4.png" alt="">
+          </div>
+          <div class="col-sm-6 col-lg-6 proj_img">
+            <img src="images/surface_real2.png" style="width:50%;margin-top:5%" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="Conclusion">
+        <h2>What have I learnt from this project?</h2>
+        <p>Mostly electrical cabinet trouble shooting during the journey LOL.
+        Giving x,y,z and spindle references may sound easy. But the CNC machine ran into problems serval times since it is built by previous students instead of commercial product as a whole.
+      </p>
+      <p>Also implementing some simple logics in Simulink like safety shutdown, control mode switch etc. can be quite not straight-forward.
+        But writting the surface finish simulation codes is the most enjoyable part of this project for sure. I have learnt some computer graphics concepets thought the process.</p>
+      </div>
+    </section>
+
+
+  <section id="footer" class="container-fluid">
+    <div class="bottom">
+      <a style="font-size: 30px"href="mailto:lennonhuang2014@gmail.com" class="btn btn-dark btn-lg" role="button"><i class="far fa-envelope-open"></i> CONTACT ME</a>
+      <p>lennonhuang2014@gmail.com</p>
+      <p>f.huang2014@alumni.ubc.ca</p>
+      <div class="logo">
+        <a href="https://github.com/LennonHuang?tab=repositories"> <img class="logo_img" src="images/GitHub-Mark-64px.png" alt=""> </a>
+        <a href="mailto:lennonhuang2014@gmail.com"> <img class="logo_img" src="images/logo-gmail.png" alt=""> </a>
+        <a href="https://www.instagram.com/lennonhuang2014/?hl=en"> <img class="logo_img" src="images/logo-ig.png" alt=""> </a>
+      </div>
+    </div>
+  </section>
+  <script src="observer.js" charset="utf-8"></script>
+</body>
+
+</html>
