@@ -1,86 +1,155 @@
-
-ul{
+body{
+}
+ul {
   font-weight: bold;
+  padding-left: 5%;
 }
-p{
-  font-weight: lighter;
+
+p {
+  font-weight: normal;
 }
-a:hover{
-  text-decoration: none !important;
+
+a:hover {
+  text-decoration: none;
   filter: invert(100%);
 }
-.navbar{
-  position:fixed;
-}
-.profile{
-  width: 15%;
-  margin: 0 auto 5% auto;
-}
-.top-container{
-  background-color: white;
-  margin-top: 56px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),url(wrapper.jpg);
-  background-position: center;
-}
-.intro{
-  text-align: center;
-  width: 30%;
-  font-family: 'Suez One', serif;
-  font-size: 100%;
-  display: inline-block;
-  padding-top: 5%;
-  margin-left: 20%;
-  margin-top: 3%;
-  background-color: transparent;
+
+.navbar {
+  position: fixed;
 }
 
-.mid-container{
+.profile {
+  border-radius: 20%;
+}
+
+.top-container {
+  background-color: white;
+  margin-top: 56px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(wrapper.jpg);
+  background-position: center;
+  text-align: center;
+}
+
+.intro {
+  font-family: 'Suez One', serif;
+  font-size: 100%;
+  background-color: transparent;
+  padding: 5% 20% 5% 20%;
+}
+
+.mid-container {
   background-color: #222831;
   color: white;
   padding-top: 2%;
   padding-bottom: 2%;
 }
-.like_content{
+.container-title{
+  text-align: center;
+}
+
+.like_content {
+  list-style-position: inside;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 120%;
+}
+
+.fade-in{
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.fade-in.appear{
+  opacity: 1;
+}
+
+.Education_container{
+  background-color: #222831;
+  color: white;
+}
+
+.Education {
+  list-style-position: inside;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 120%;
+}
+
+#aca_container {
+  background-color: white;
+  color: black;
+  min-height: 600px;
+  padding: 5% 0;
+  font-size: 120%;
+}
+#aca_container ul{
+  font-weight:bold;
+}
+#aca_container h3{
+  text-align: center;
+}
+
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23222831' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23222831' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-indicators li {
+    background-color: grey;
+}
+.carousel-indicators .active {
+    background-color: #222831;
+}
+
+.aca_proj {
   list-style-position: inside;
   width: 50%;
   margin: 0 auto;
 }
-.Education{
-  list-style-position: inside;
-  width: 50%;
-  margin: 0 auto ;
-  padding-top: 2%;
-  padding-bottom: 2%;
+
+.aca_proj a{
+  color: blue;
+  font-style: normal;
 }
-.aca_container{
-  background-color: #222831;
-  color: white;
+
+.pro_imgs_div{
+  text-align: center;
 }
-.aca_proj{
-  list-style-position: inside;
-  width: 50%;
-  margin: 0 auto ;
-  padding-top: 2%;
-  padding-bottom: 2%;
+
+.project_img{
+  height: 250px;
+  padding: 2% 2%;
 }
-.Skills{
+
+.Skill_container p{
+  padding-left: 5%;
+}
+
+.Skills {
   width: 50%;
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-top: 2%;
   padding-bottom: 2%;
   font-weight: bold;
 }
-.bottom{
+
+.bottom {
   background-color: #222831;
   color: white;
+  padding: 1%;
   text-align: center;
 }
-.logo{
-  width: 50%;
+
+.logo {
+  width: 40%;
   margin: 0 auto;
-  text-align: center;
 }
-.logo_img{
+
+.logo_img {
   width: 32px;
   margin: 5% 5% 5% 5%;
 }

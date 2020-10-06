@@ -1,0 +1,62 @@
+html{
+    height: 100%;
+}
+body{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  font-weight: bold;
+}
+
+p {
+  font-weight: normal;
+}
+
+a:hover {
+  text-decoration: none !important;
+  filter: invert(100%);
+}
+
+.navbar {
+  position: fixed;
+}
+
+.container-fluid{
+  padding: 0 0;
+}
+
+#content{
+  margin: auto 0;
+}
+#content h1{
+  text-align: center;
+}
+#footer{
+  margin-top: auto;
+}
+
+.proj_img{
+  text-align: center;
+  width: 50%;
+  height: auto;
+  margin: auto 0;
+}
+
+.bottom {
+  background-color: #222831;
+  color: white;
+  text-align: center;
+  padding: 1%;
+}
+
+.logo {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.logo_img {
+  width: 32px;
+  margin: 5% 5% 5% 5%;
+}
