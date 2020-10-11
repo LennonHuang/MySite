@@ -19,12 +19,11 @@ a:hover {
 }
 
 .profile {
-  border-radius: 20%;
 }
 
 .top-container {
   background-color: white;
-  margin-top: 56px;
+  margin-top: 1%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(wrapper.jpg);
   background-position: center;
   text-align: center;
