@@ -22,19 +22,14 @@ a:hover {
 }
 
 .top-container {
+  font-family: 'Suez One', serif;
+  font-size: 100%;
   background-color: white;
-  margin-top: 1%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(wrapper.jpg);
   background-position: center;
   text-align: center;
 }
 
-.intro {
-  font-family: 'Suez One', serif;
-  font-size: 100%;
-  background-color: transparent;
-  padding: 5% 15% 5% 20%;
-}
 
 .mid-container {
   background-color: #222831;
