@@ -43,8 +43,12 @@
         <h2>What is it?</h2>
         <p>It is a texture method using micro-milling. Unlike conventional milling in which you may probably end up with simple grooves,
         the trochoidal movement of cutting edge is controlled by reference signals to create texture.
-        To be specific, the spindle speed reference is modulated by giving harmonics signals to dSpace control box with MATLAB/Simulink.
+        To be specific, the spindle speed reference is modulated (time-varying as shown in the .gif below) by giving harmonics signals to dSpace control box with MATLAB/Simulink.
+        It's my Master Thesis and more details can be found in <a href="https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0394577">UBC Open Library</a>.
       </p>
+      <div class="container-fluid " style="text-align:center">
+      <img src="images/k10A09.gif" alt="description of gif" />
+    </div>
       </div>
       <div class="Strategy ">
         <h2>Strategy</h2>
@@ -53,15 +57,24 @@
         <div class="" style="text-align:center">
           <img src="images/textureStrategy.png" style="width: 50%" alt="">
         </div>
-        <p>Before doing any machining, I have written some codes to simulate the surface finish using Z-map method.
+        <p>I have used an in-house built CNC micro-milling machine controlled by dSpace control box:</p>
+        <div class="" style="text-align:center">
+            <img src="images/InHouseCNC.png" style="width: 20%" alt="">
+            <img src="images/ElectricalCabinet.jpg" style="width: 20%" alt="">
+        </div>
+        <p>Since the spindle speed is time-varying, a servo motor was used. And the spindle speed control is treated as an extra axis added into the electrical cabinet (relay, switches, servo and power source): </p>
+        <div class="" style="text-align:center">
+            <img src="images/ExtraAxis.jpg" style="width: 30%" alt="">
+        </div>
+        <p>Before doing any machining, I have written some codes to simulate the surface finish using Z-map method based on cutting points.
           The flow chart of the program in shown in the figure below.
         </p>
         <div class="" style="text-align:center">
             <img src="images/textureSimulation.png" style="width: 50%" alt="">
-          </div>
-        <p>The cutting force is simulated by converting cutting history points into a concave hull so that we can know the materials left (uncut chip thickness to be specific) on the workpiece for each time interval as shown in the figure below.</p>
+        </div>
+        <p>The cutting force is simulated by converting cutting history points into a concave hull so that we can determine the materials left (uncut chip thickness to be specific) on the workpiece for each time interval as shown in the figure below.</p>
         <div class="" style="text-align:center">
-          <img src="images/ConcaveHull.jpg" style="width: 30%" alt="">
+          <img src="images/ConcaveHull.png" style="width: 30%" alt="">
         </div>
       </div>
       <div class="Result">
@@ -86,28 +99,35 @@
         </div>
         <div class="row">
           <div class="col-sm-6 col-lg-6 proj_img">
-            <img src="images/surface_3.png" alt="">
+            <img src="images/surface_Fz02.png" alt="">
           </div>
           <div class="col-sm-6 col-lg-6 proj_img">
-            <img src="images/surface_real.png" style="width:50%;margin-top:5%" alt="">
+            <img src="images/surface_realFz02.png" style="width:50%;margin-top:5%" alt="">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6 col-lg-6 proj_img">
-            <img src="images/surface_4.png" alt="">
+            <img src="images/surface_Fz04.png" alt="">
           </div>
           <div class="col-sm-6 col-lg-6 proj_img">
-            <img src="images/surface_real2.png" style="width:50%;margin-top:5%" alt="">
+            <img src="images/surface_realFz04.png" style="width:50%;margin-top:5%" alt="">
           </div>
+          <div class="row">
+            <div class="col-sm-6 col-lg-6 proj_img">
+              <img src="images/surface_Fz04A10.png" alt="">
+            </div>
+            <div class="col-sm-6 col-lg-6 proj_img">
+              <img src="images/surface_realFz04A10.png" style="width:50%;margin-top:5%" alt="">
+            </div>
         </div>
       </div>
       <div class="Conclusion">
         <h2>What have I learnt from this project?</h2>
-        <p>Mostly electrical cabinet trouble shooting during the journey LOL.
+        <p>Mostly electrical cabinet trouble shooting during the journey.
         Giving x,y,z and spindle references may sound easy. But the CNC machine ran into problems serval times since it is built by previous students instead of commercial product as a whole.
       </p>
-      <p>Also implementing some simple logics in Simulink like safety shutdown, control mode switch etc. can be quite not straight-forward.
-        But writting the surface finish simulation codes is the most enjoyable part of this project for sure. I have learnt some computer graphics concepets thought the process.</p>
+      <p>Also implemented some control logics in Simulink like safety shutdown, control mode switch etc. and designed user interface in ControlDesk.
+        I would say the most enjoyable part of this project to that I have learnt some computer graphics concepets and writting codes to process the cutting points cloud to get meaningful results (surface finish and forces).</p>
       </div>
     </section>
 
