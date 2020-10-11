@@ -42,28 +42,28 @@
         <h2>What is it?</h2>
         <p>It is a project of building the navigation system (hardware and software) of an omnidirectional autonomous guided vehicle (AGV).
         The project is based on <a href="http://wiki.ros.org/">Robot Operating system (ROS)</a>, <a href="http://gazebosim.org/">Gazebo simulation platform</a> and an omnidirectional AGV prototype.
-        It is my undergraduate capstone project and I worked with a master student. My main work is in implementing software packages and Lidar hardware communication
-        while my partner worked on the micro-controller and other sensors (IMU, Odometry).
+        It is my undergraduate capstone project and I worked with a master student. My main work is in implementing software packages and Lidar hardware installation and communication
+        while my teammate worked on the micro-controller and other sensors (IMU, Odometry).
       </p>
       <p>The navigation system includes four parts:</p>
       <ul>
         <li><a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping"> SLAM</a>: <p>building the map of environment</p></li>
         <li> Localization: <p>know where it is in the map</p> </li>
-        <li> Motion planing <p>how to get from point A to point B</p> </li>
+        <li> Path and motion planing <p>how to get from point A to point B</p> </li>
         <li> Client Node <p>Give destinations in the specific order to finish the client job</p> </li>
       </ul>
       </div>
       <div class="Strategy ">
         <h2>Strategy</h2>
         <ul>
-          <li>SLAM <p><a href="https://openslam-org.github.io/gmapping.html">Gmapping </a>from OpenSLAM</p></li>
+          <li>SLAM <p><a href="https://openslam-org.github.io/gmapping.html">Gmapping </a>from OpenSLAM. Also have tried <a href="http://wiki.ros.org/hector_slam">HectorSLAM</a>.</p></li>
           <li> Localization: <p> <a href="http://wiki.ros.org/amcl">AMCL</a> package using Monte Carlo localization. This method combined with lidar can even let the robot recover from odometry or IMU errors since these sensors are "blind".</p> </li>
-          <li> Motion planning <p> <a href="http://wiki.ros.org/move_base">Move_base</a> package. Global planner is A* while Local planner is <a href="http://wiki.ros.org/dwa_local_planner?distro=noetic">DWA</a> </p> </li>
+          <li> Path and motion planning <p> <a href="http://wiki.ros.org/move_base">Move_base</a> package. Global planner is A* while Local planner is <a href="http://wiki.ros.org/dwa_local_planner?distro=noetic">DWA</a> </p> </li>
           <li> Client Node <p> <a href="http://wiki.ros.org/actionlib">Actionlib</a> package. I used this package to let the robot automatically wander around the room with a node written in python. </p> </li>
         </ul>
         <h5>After breaking down all the functions, here is what I did step by step:</h3>
         <ol>
-          <li>Building the 3D model in Gazebo platform with model in SolidWorks. <p>It includes some <a href="http://wiki.ros.org/urdf">URDF </a>works. Also virtual environemnt was built.</p></li>
+          <li>Building the 3D model in Gazebo platform with model in SolidWorks. <p>It includes some <a href="http://wiki.ros.org/urdf">URDF </a>works. Also virtual environemnt was built:</p></li>
           <div class="row">
             <div class="col-sm-6 col-lg-6 proj_img">
               <img src="images/AGV.jpg" style="width:80%" alt="">
@@ -95,21 +95,21 @@
             <img src="images/Gazebo_map2.jpg" alt="">
           </div>
         </div>
-        <h5>Map of the room by Gmapping using Lidar data</h5>
+        <h5>Map of the lab room built by Gmapping using Lidar data</h5>
         <div class="container-fluid " style="text-align:center">
           <img src="images/room.png" alt="">
         </div>
-        <h5>Finally, just a gif showing how it was wandering around the room automatically.</h5>
+        <h5>Finally, just a gif showing how the AGV was wandering around the room automatically.</h5>
         <div class="container-fluid " style="text-align:center">
           <img src="images/AGV_gif.gif" alt="description of gif" />
         </div>
       </div>
       <div class="Conclusion">
         <h2>What have I learnt from this project?</h2>
-        <p>How to use packages in ROS and command lines in Linux. How to write nodes in ROS to listen and send messages to topics. How to read Lidar data and put it on ROS.</p>
+        <p>Implemented navigation packages in ROS and got used to command lines in Linux. Learnt how to write nodes (both in Python and C++) in ROS to listen and send messages to topics. How to read Lidar data and put it on ROS.</p>
       <p>Mathmatics behind every package is very deep. Let alone implementing each function in codes. Open source platform ROS allow me to stand on the shoulder of giants.
-      For sure, the performance of the navigation system is way far from satisfactory. To improve it, we have to understand the Mathmatics and codes behind it. But given my limit time in the final year of undergrad, I was not able to dig further.
-    Maybe in the future, if I can find a job in this field (Most companies recruit CS OR EE students tho). However, for sure, I am more interested in Robotics after this project.</p>
+      For sure, the performance of the navigation system is way far from satisfactory. To improve it, we have to understand the Mathmatics and Algorithims behind it. But given my limit time, I was not able to dig further.
+      However, I am definitely more interested in Robotics after this project and am very passionate about learning more.</p>
       </div>
     </section>
 
