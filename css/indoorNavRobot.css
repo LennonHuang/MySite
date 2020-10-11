@@ -21,6 +21,7 @@ a:hover {
 
 .navbar {
   position: fixed;
+  margin-bottom: 56px;
 }
 
 .container-fluid{
@@ -28,7 +29,7 @@ a:hover {
 }
 
 #content{
-  margin: auto 0;
+  margin-top: 56px;
 }
 #content h1{
   text-align: center;
