@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>☕Lennon Huang's Personal Site</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JavaScript for nav bar -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/b2fec3d3e5.js" crossorigin="anonymous"></script>
+  <!-- customize style -->
+  <link rel="stylesheet" href="css/indoorNavRobot.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <a class="navbar-brand" href="index.html">☕</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="index.html#aca_container">Projects</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="blog.html">Blog</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="index.html#footer">Contact</a> </li>
+        </ul>
+      </div>
+    </nav>
+    <section id = "content" class="">
+      <div class="whatIsit">
+        <h2>What is it?</h2>
+        <p>It is a personal project where I built a web app to control the servo to open the locked door for me.</p>
+        <div class="container-fluid " style="text-align:center">
+          <img src="images/WebDoor.jpg" width="30%"/>
+        </div>
+      </div>
+      <div class="Strategy ">
+        <h2>Strategy</h2>
+        <ul>
+          <ol>
+            <p>1.ESP32 Login in the same wifi as your device and be a server at certain port.</p>
+          </ol>
+          <ol>
+            <p>2. Web app user interface design</p>
+          </ol>
+          <ol>
+            <p>3.Web client write http request for the ESP32 and ESP32 parse the GET request and response with its GPIO.</p>
+          </ol>
+          <ol>
+            <p>4.Hardware design (servo mounting position, bread board and power supply)</p>
+          </ol>
+        </ul>
+      </div>
+      <div class="Result">
+        <h2>Results</h2>
+        <div class="container-fluid " style="text-align:center">
+          <img src="images/WebAppDoorOpener.gif" width="20%" alt="description of gif" />
+        </div>
+      </div>
+      <div class="Conclusion">
+        <h2>What have I learnt from this project?</h2>
+        <ol>
+          <p>1. How to use Http request with hardware</p>
+          <p>2. Mounting position was hard to be decided since I cannot drill a hole on the landlord's door.</p>
+          <p>3. Not having common GND for all devices can be a potential bug. </p>
+          <p>4. When the target position of a servo is far from the current position, the servo was vibrating but I thought the servo was not given proper signal since I was using Arduino IDE for ESP32.
+          But choosing NodeMCU-32S in Arduino IDE is compatible with the board (ESP32) I bought from Amazon.</p>
+        </ol>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="bottom" >
+        <a style="font-size: 30px"href="mailto:lennonhuang2014@gmail.com" class="btn btn-dark btn-lg" role="button"><i class="far fa-envelope-open"></i> CONTACT ME</a>
+        <p>lennonhuang2014@gmail.com</p>
+        <p>f.huang2014@alumni.ubc.ca</p>
+        <div class="logo">
+          <a href="https://github.com/LennonHuang?tab=repositories"> <img class="logo_img" src="images/GitHub-Mark-64px.png" alt=""> </a>
+          <a href="mailto:lennonhuang2014@gmail.com"> <img class="logo_img" src="images/logo-gmail.png" alt=""> </a>
+          <a href="https://www.instagram.com/lennonhuang2014/?hl=en"> <img class="logo_img" src="images/logo-ig.png" alt=""> </a>
+          <a href="https://www.linkedin.com/in/fengqing-lennon-huang-075603169/"> <img class="logo_img" src="images/logo-link-dark.png" alt=""> </a>
+        </div>
+      </div>
+    </section>
+  <script src="observer.js" charset="utf-8"></script>
+</body>
+
+</html>
