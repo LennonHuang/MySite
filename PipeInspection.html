@@ -41,23 +41,23 @@
           Basic usages are Data Visualization and Collection.
           It's also supposed to be a helper for the user: auto connect sensors based on the project, monitoring 
           sensors or actuators status and inform user any connection error during the survey.
-          Due to company's privacy, I cannot share the code for the software but it's similiar to a personal project that I was working on <a href="https://github.com/LennonHuang/qt_demo">here </a>
+          Due to company's privacy, I cannot share the code but it's similiar to a personal project that I was working on <a href="https://github.com/LennonHuang/qt_demo">here </a>
           which is modified from <a href="http://wiki.ros.org/qt_create/Tutorials/Qt%20App%20Templates">a qt-ros template </a> from ROS wiki
           which I found when I was interested in Qt integrated with ROS.
         </ul>
         <div class="container-fluid " style="text-align:center">
-          <img src="images/dataCollection.jpg" width="60%"/>
+          <img src="images/dataCollection.png" width="60%"/>
         </div>
       </div>
       <div class="Strategy ">
         <h2>Strategy</h2>
         <ul>
-          The software is designed to be ROS-based was because we would like to take advantage of a lot of ROS powerful library like rosbag, dynamic reconfigure,
-          hardware manager and RVIZ. For example, rosbag is really handy to have when testing SLAM with different parameters. Well in our case, it's more of 3d construction instead of SLAM.
+          The software is designed to be ROS-based was because we would like to take advantage of a lot of ROS powerful libraries like rosbag, dynamic reconfigure,
+          RVIZ and hardware manager. For example, rosbag is really handy to have when testing SLAM with different parameters. Well in our case, it's more of 3d construction instead of SLAM.
           <ol>
             <p><strong>1. Socket programming for sensor/actuator ROS drivers.</strong> This is due to the fact that the robot gonna travel for a long distance
-            so we prefer ethernet connection. I will need to read manual and write either UDP or TCP socket when I. the sensor/actuator need to use a serial-ethernet module II. there is no ROS driver for the sensors/actuators.
-            I used mostly Python Socket since it's much easier and fast to validate the ideas. But I will definitely need to read more C/C++ for it since performance wise, C/C++ is much better.
+            so we prefer ethernet connection. I needed to read manuals and wrote either UDP or TCP sockets when I. the sensor/actuator need to use a serial-ethernet module II. there is no ROS driver for the sensors/actuators.
+            I used mostly Python Socket since it's much easier and fast to validate ideas. But I will definitely need to use C/C++ for it since performance wise, C/C++ is much better.
             <a href="https://beej.us/guide/bgnet/html/">Here</a> is a good resource to learn about it. Networking is a complicated and interesting topic and I would definitely like to know more.
           </p>
           </ol>
@@ -65,18 +65,18 @@
             <p><strong>2. <a href="http://docs.ros.org/en/noetic/api/rviz/html/c++/">RVIZ cpp library</a> for data visualization</strong> Since it is well-supported for ROS topic mechanism and well-integrated with Qt.</p>
           </ol>
           <ol>
-            <p><strong>3. Camera streaming using Gstreamer pipeline and Qt Video Widget. Collection using OpenCV and FFMPEG</strong>Qt Media Player support Gst pipeline
-            I have also tried in C code but really long code for the same functionality of one command line. Collection side, we need subtitled the video with sensor reading
-            I tried ros callback function and then add sensor readings to the image frame by frame. Also tried to use Gstreamer's <em><a href="https://gstreamer.freedesktop.org/documentation/pango/textoverlay.html?gi-language=c">textOverlay</a></em> 
+            <p><strong>3. Camera streaming using Gstreamer pipeline and Qt Video Widget. Collection using OpenCV and FFMPEG.</strong> Qt Media Player support Gst pipeline
+            I have also tried in C code version but really long code for the same functionality of one command line. Collection side, we needed to subtitle the videos with sensor reading
+            I tried I. ros callback function and then add sensor readings to the image frame by frame II. Gstreamer's <em><a href="https://gstreamer.freedesktop.org/documentation/pango/textoverlay.html?gi-language=c">textOverlay</a></em> 
              and make it dynamic with <a href="https://gstreamer.freedesktop.org/documentation/application-development/advanced/dparams.html?gi-language=c">GstControlSource</a>
              But I prefer the first approach since it is much more straight-forward.
           </p>
           </ol>
           <ol>
             <p><strong>4. Other sensor data collection using csv writer (simply std::ofstream) and rosbag (backup data)</strong>the reason for having csv files 
-            is that it is easier for post-processing team</p>
+            is that it is muchy easier for post-processing team</p>
             <p><strong>5. Project database management with std::ifstream</strong> This is designed for the purpose of automate the collection job. eg. based on the project database, automatically connect
-            specific sensor/actuators and load the survey side information eg. the survey site's length and diameters. A more advanced way to do it is to use SQL
+            specific sensor/actuators and load the survey side information eg. the survey site's length and diameters of pipes. A more advanced way to do it is to use SQL
             with SQL API. This is more secure and faster (csv is flat-file database). So for now the database is pretty simple but better switch to SQL before things get bigger.</p>
           </ol>
         </ul>
@@ -88,7 +88,7 @@
           <div class="col-sm-6 col-lg-6 proj_img textalign:center"></div>  
           <img src="images/dataCollectionGUI.png" style="width:80%">
           </div>
-          <h4>Example of Sonar Data View:</h4>
+          <h4>Example of Sonar Data Viewer:</h4>
           <div class="col-sm-6 col-lg-6 proj_img">
             <img src="images/sonar.png" style="width:45%" alt="">
           </div>
@@ -99,7 +99,7 @@
         <ol>
           <p>1.<strong>Qt.</strong> I knew nothing about it but heard alot from learning ros rqt.</p>
           <p>2.<strong>Socket Programming.</strong> A must for writing driver for sensor/actuator with ethernet connection. A glimpse of network programming lol?</p>
-          <p>3.<strong>Multi-thread.</strong> Different thread gonna access same data. With cpp using std::atomic or std::mutex. I cannot believe I was using a bool flag to lock at the beginning lol.</p>
+          <p>3.<strong>Multi-thread.</strong> Different thread gonna access same data. Common on GUI. With cpp using std::atomic or std::mutex. I cannot believe I was using a bool flag to lock at the beginning :).</p>
           <p>4.<strong>StackOverFlow.</strong> Yes, thank you very much. Cannot be more grateful</p>
         </ol>
       </div>
